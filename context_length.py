@@ -75,7 +75,13 @@ class ContextLength:
 				while len(repeated_tokens) < n_tokens: repeated_tokens.extend(tokens)
 				return encoding.decode(repeated_tokens[:n_tokens])
 			bible_string = ''
-			with open('bible.txt', 'r', encoding='utf-8') as file: bible_string = str(file.read()).strip()
+			def _get_bible_path():
+				from os.path import abspath, dirname, join
+				from inspect import getfile, currentframe
+				current_file_path = abspath(getfile(currentframe()))
+				directory_path = dirname(current_file_path)
+				return join(directory_path, 'bible.txt')
+			with open(_get_bible_path(), 'r', encoding='utf-8') as file: bible_string = str(file.read()).strip()
 			bible_string = _adjust_text_tokens(bible_string=bible_string, n_tokens=n_tokens)
 			from copy import deepcopy
 			bible_words = bible_string.split(chr(32))
