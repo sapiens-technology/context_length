@@ -60,53 +60,53 @@ for data in return_dictionary['data']:
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 INPUT:
 txt
-  1:1 In the beginning God created the heaven and the earth.
-  
-  1:2 And the earth was without form, and void; and darkness was upon
-  the face of the deep. And the Spirit of God moved upon the face of the
-  waters.
-  
-  1:3 And God said, Let there be light: and there was light.
-  
-  1:4 And God saw the light, that it was good: and God divided the 8083 light
-  from the darkness.
-  
-  1:5 And God called the
+	1:1 In the beginning God created the heaven and the earth.
+	
+	1:2 And the earth was without form, and void; and darkness was upon
+	the face of the deep. And the Spirit of God moved upon the face 1047 of the
+	waters.
+	
+	1:3 And God said, Let there be light: and there was light.
+	
+	1:4 And God saw the light, that it was good: and God divided the light
+	from the darkness.
+	
+	1:5 And God called the
 
 The presented text contains a number that doesn't make sense somewhere among the words. What number is that?
 
-A) 1575
-B) 5081
-C) 4924
-D) 8083
+A) 3002
+B) 7654
+C) 1047
+D) 9893
 
 OUPUT:
-D) 8083
+C) 1047
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 INPUT:
 txt
-  1:1 In the beginning God created the heaven and the earth.
-  
-  1:2 And the earth was without form, and void; and darkness was upon
-  the face of the deep. And the Spirit of God moved upon the face 6098 of the
-  waters.
-  
-  1:3 And God said, Let there be light: and there was light.
-  
-  1:4 And God saw the light, that it was good: and God divided the light
-  from the darkness.
-  
-  1:5 And God called the
+	1:1 In the beginning God created the heaven and the earth.
+	
+	1:2 And the earth was without form, and void; and darkness was upon
+	the face of the deep. And the Spirit of God moved upon the face of the
+	waters.
+	
+	1:3 And God said, Let there be light: and there was light.
+	
+	1:4 And God saw the light, that it was good: and God divided the light
+	from the darkness.
+	
+	1:5 And 5472 God called the
 
 The presented text contains a number that doesn't make sense somewhere among the words. What number is that?
 
-A) 6098
-B) 2967
-C) 6470
-D) 4576
+A) 3828
+B) 5472
+C) 1661
+D) 7754
 
 OUPUT:
-A) 6098
+B) 5472
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 
@@ -118,6 +118,17 @@ context_length = ContextLength( # construction of the main class of the module
 	show_errors=True, # if True, displays a summarized error message when an error occurs; if False, does not display any error message (default value: True)
 	display_error_point=False # if True, displays the error details when "show_errors" is enabled; if False, does not display the error details (default value: False)
 ) # returns the instantiation of the class object
+if context_length: print('Context Length class SUCCESSFULLY created!')
+else: print('ERROR creating the Context Length class.')
+
+```
+```bash
+Context Length class SUCCESSFULLY created!
+```
+```python
+from context_length import ContextLength
+context_length = ContextLength()
+
 if context_length: print('Context Length class SUCCESSFULLY created!')
 else: print('ERROR creating the Context Length class.')
 
@@ -157,178 +168,178 @@ for data in return_dictionary['data']:
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 INPUT:
 txt
-  1:1 In the beginning God created the heaven and the earth.
-  
-  1:2 And the earth was without form, and void; and darkness was upon
-  the face of the deep. And the Spirit of God moved upon the face of the
-  waters.
-  
-  1:3 And God said, Let there be light: and there was light.
-  
-  1:4 And God 1996 saw the light, that it was good: and God divided the light
-  from the darkness.
-  
-  1:5 And God called the light Day, and the darkness he called Night.
-  And the evening and the morning were the first day.
-  
-  1:6 And God said, Let there be a firmament in the midst of the waters,
-  and let it divide the waters from the waters.
-  
-  1:7 And God made the firmament, and divided the waters which were
-  under the firmament from the waters which were above the firmament:
-  and it was so.
-  
-  1:8 And God called the firmament Heaven. And the
+	1:1 In the beginning God created the heaven and the earth.
+	
+	1:2 And the earth was without form, and void; and darkness was upon
+	the face of the deep. And the Spirit of God moved upon the face of the
+	waters.
+	
+	1:3 And God said, Let there be light: and there was light.
+	
+	1:4 And God saw the light, that it was good: and God divided the light
+	from the darkness.
+	
+	1:5 And God called the light Day, and the darkness he called Night.
+	And the evening and the morning were the first 4730 day.
+	
+	1:6 And God said, Let there be a firmament in the midst of the waters,
+	and let it divide the waters from the waters.
+	
+	1:7 And God made the firmament, and divided the waters which were
+	under the firmament from the waters which were above the firmament:
+	and it was so.
+	
+	1:8 And God called the firmament Heaven. And the
 
 The presented text contains a number that doesn't make sense somewhere among the words. What number is that?
 
-A) 1996
-B) 5158
-C) 6617
-D) 3342
+A) 8513
+B) 4547
+C) 4730
+D) 8190
 
 OUPUT:
-A) 1996
+C) 4730
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 INPUT:
 txt
-  1:1 In the beginning God created the heaven and the earth.
-  
-  1:2 And the earth was without form, and void; and darkness was upon
-  the face of the deep. And the Spirit of God moved upon the face of the
-  waters.
-  
-  1:3 And God said, Let there be light: and there was light.
-  
-  1:4 And God saw the light, that it was good: and God divided the light
-  from the darkness.
-  
-  1:5 And God called the light Day, 8495 and the darkness he called Night.
-  And the evening and the morning were the first day.
-  
-  1:6 And God said, Let there be a firmament in the midst of the waters,
-  and let it divide the waters from the waters.
-  
-  1:7 And God made the firmament, and divided the waters which were
-  under the firmament from the waters which were above the firmament:
-  and it was so.
-  
-  1:8 And God called the firmament Heaven. And the
+	1:1 In the beginning God created the heaven and the earth.
+	
+	1:2 And the earth was without form, and void; and darkness was upon
+	the face of the deep. And the Spirit of God moved upon the face of the
+	waters.
+	
+	1:3 And God said, Let there be light: and there was light.
+	
+	1:4 And God saw the light, that it was good: and God divided the 2364 light
+	from the darkness.
+	
+	1:5 And God called the light Day, and the darkness he called Night.
+	And the evening and the morning were the first day.
+	
+	1:6 And God said, Let there be a firmament in the midst of the waters,
+	and let it divide the waters from the waters.
+	
+	1:7 And God made the firmament, and divided the waters which were
+	under the firmament from the waters which were above the firmament:
+	and it was so.
+	
+	1:8 And God called the firmament Heaven. And the
 
 The presented text contains a number that doesn't make sense somewhere among the words. What number is that?
 
-A) 6607
-B) 8495
-C) 3077
-D) 5727
+A) 6934
+B) 4440
+C) 9806
+D) 2364
 
 OUPUT:
-B) 8495
+D) 2364
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 INPUT:
 txt
-  1:1 In the beginning God created the heaven and the earth.
-  
-  1:2 And the earth was without form, and void; and darkness was upon
-  the face of the deep. And the Spirit of God moved 2696 upon the face of the
-  waters.
-  
-  1:3 And God said, Let there be light: and there was light.
-  
-  1:4 And God saw the light, that it was good: and God divided the light
-  from the darkness.
-  
-  1:5 And God called the light Day, and the darkness he called Night.
-  And the evening and the morning were the first day.
-  
-  1:6 And God said, Let there be a firmament in the midst of the waters,
-  and let it divide the waters from the waters.
-  
-  1:7 And God made the firmament, and divided the waters which were
-  under the firmament from the waters which were above the firmament:
-  and it was so.
-  
-  1:8 And God called the firmament Heaven. And the
+	1:1 In the beginning God created the heaven and the earth.
+	
+	1:2 And the earth was without form, and void; and darkness was upon
+	the face of the deep. And the Spirit of God moved upon the face of the
+	waters.
+	
+	1:3 And God said, Let there be light: and there was light.
+	
+	1:4 And God saw the light, that it was good: and God divided the light
+	from the darkness.
+	
+	1:5 And God called the light 2341 Day, and the darkness he called Night.
+	And the evening and the morning were the first day.
+	
+	1:6 And God said, Let there be a firmament in the midst of the waters,
+	and let it divide the waters from the waters.
+	
+	1:7 And God made the firmament, and divided the waters which were
+	under the firmament from the waters which were above the firmament:
+	and it was so.
+	
+	1:8 And God called the firmament Heaven. And the
 
 The presented text contains a number that doesn't make sense somewhere among the words. What number is that?
 
-A) 2696
-B) 6456
-C) 9561
-D) 6064
+A) 2780
+B) 2341
+C) 1109
+D) 9295
 
 OUPUT:
-A) 2696
+B) 2341
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 INPUT:
 txt
-  1:1 In the beginning God created the heaven and the earth.
-  
-  1:2 And the earth was without form, and void; and darkness was upon
-  the face of the deep. And the Spirit of God moved upon the face of the
-  waters.
-  
-  1:3 5303 And God said, Let there be light: and there was light.
-  
-  1:4 And God saw the light, that it was good: and God divided the light
-  from the darkness.
-  
-  1:5 And God called the light Day, and the darkness he called Night.
-  And the evening and the morning were the first day.
-  
-  1:6 And God said, Let there be a firmament in the midst of the waters,
-  and let it divide the waters from the waters.
-  
-  1:7 And God made the firmament, and divided the waters which were
-  under the firmament from the waters which were above the firmament:
-  and it was so.
-  
-  1:8 And God called the firmament Heaven. And the
+	1:1 In the beginning God created the heaven and the earth.
+	
+	1:2 And the earth was without form, and void; and darkness was upon
+	the face of the deep. And the Spirit of God moved upon the face of the
+	waters.
+	
+	1:3 And God said, Let there be light: and there was light.
+	
+	1:4 And God saw the light, that it was good: and God divided the light
+	from the darkness.
+	
+	1:5 And God called the light Day, and the darkness he called Night.
+	And the evening and the morning were the first day.
+	
+	1:6 And God said, Let there be a firmament in the midst of the waters,
+	and let it divide the waters from the waters.
+	
+	1:7 And God made the firmament, and divided the waters which were
+	under the firmament from the waters which were above the firmament:
+	and it was so.
+	
+	1:8 And God called the firmament 6480 Heaven. And the
 
 The presented text contains a number that doesn't make sense somewhere among the words. What number is that?
 
-A) 5303
-B) 2200
-C) 6650
-D) 2684
+A) 1253
+B) 9865
+C) 2647
+D) 6480
 
 OUPUT:
-A) 5303
+D) 6480
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 INPUT:
 txt
-  1:1 In the beginning God created the heaven and the earth.
-  
-  1:2 And the earth was without form, and void; and darkness was upon
-  the face of the deep. And the Spirit of God moved upon the face of the
-  waters.
-  
-  1:3 And God said, Let there be light: and there was light.
-  
-  1:4 And God saw the light, that it was good: and God divided the light
-  from the darkness.
-  
-  1:5 And God called the light Day, and the darkness he called Night.
-  And the evening and the morning were the first day.
-  
-  1:6 And God said, Let there be a firmament in the midst of the waters,
-  and let it divide the waters from the waters.
-  
-  1:7 And God made the firmament, and divided the waters which were
-  under the firmament from the waters which were above the firmament:
-  and it was so.
-  
-  1:8 And God called the firmament 6041 Heaven. And the
+	1:1 In the beginning God created the heaven and the earth.
+	
+	1:2 And the earth was without form, and void; and darkness was upon
+	the face of the deep. And the Spirit of God moved upon the face of the
+	waters.
+	
+	1:3 And God said, Let there be light: and there was light.
+	
+	1:4 And God saw the light, that it was good: and God divided the light
+	from the darkness.
+	
+	1:5 And God called the light Day, and the darkness he called Night.
+	And the evening and the morning were the first day.
+	
+	1:6 And God said, Let there be a firmament in the midst of the waters,
+	and let it divide the waters from the waters.
+	
+	1:7 And God made the firmament, and divided the waters which were
+	under the firmament from 9097 the waters which were above the firmament:
+	and it was so.
+	
+	1:8 And God called the firmament Heaven. And the
 
 The presented text contains a number that doesn't make sense somewhere among the words. What number is that?
 
-A) 6041
-B) 8465
-C) 3267
-D) 1008
+A) 9914
+B) 9097
+C) 1564
+D) 4700
 
 OUPUT:
-A) 6041
+B) 9097
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 ```python
@@ -340,7 +351,49 @@ print(return_dictionary)
 
 ```
 ```bash
-{'data': [{'output': 'C) 2855', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the 2855 darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let it divide the waters from the waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 1762\nB) 2666\nC) 2855\nD) 3763"}, {'output': 'B) 6150', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without 6150 form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let it divide the waters from the waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 3733\nB) 6150\nC) 8544\nD) 2614"}, {'output': 'B) 9936', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let it divide the waters from 9936 the waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 1080\nB) 9936\nC) 9122\nD) 9388"}, {'output': 'A) 3284', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a 3284 firmament in the midst of the waters,\nand let it divide the waters from the waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 3284\nB) 8025\nC) 6834\nD) 3465"}, {'output': 'D) 5031', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let 5031 it divide the waters from the waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 3403\nB) 2763\nC) 4082\nD) 5031"}]}
+{'data': [{'output': 'B) 3270', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let it divide the waters from the 3270 waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 2370\nB) 3270\nC) 9833\nD) 8211"}, {'output': 'A) 2534', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the 2534 deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let it divide the waters from the waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 2534\nB) 7680\nC) 8103\nD) 6209"}, {'output': 'C) 8367', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let it divide the waters from the waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 8367 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 9151\nB) 9473\nC) 8367\nD) 1897"}, {'output': 'A) 7563', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let it divide the waters from the waters.\n\n1:7 And God made the firmament, and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the 7563 firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 7563\nB) 8287\nC) 3596\nD) 8741"}, {'output': 'D) 2776', 'input': "```txt\n1:1 In the beginning God created the heaven and the earth.\n\n1:2 And the earth was without form, and void; and darkness was upon\nthe face of the deep. And the Spirit of God moved upon the face of the\nwaters.\n\n1:3 And God said, Let there be light: and there was light.\n\n1:4 And God saw the light, that it was good: and God divided the light\nfrom the darkness.\n\n1:5 And God called the light Day, and the darkness he called Night.\nAnd the evening and the morning were the first day.\n\n1:6 And God said, Let there be a firmament in the midst of the waters,\nand let it divide the waters from the waters.\n\n1:7 And God made the firmament, 2776 and divided the waters which were\nunder the firmament from the waters which were above the firmament:\nand it was so.\n\n1:8 And God called the firmament Heaven. And the\n```\n\nThe presented text contains a number that doesn't make sense somewhere among the words. What number is that?\n\nA) 7764\nB) 2918\nC) 3576\nD) 2776"}]}
+```
+```python
+from context_length import ContextLength
+context_length = ContextLength()
+
+n_samples = 100
+n_tokens = 500
+return_dictionary = context_length.generateDatabase(n_samples, n_tokens)
+print('main key:', list(return_dictionary.keys()))
+print('keys of pairs:', list(return_dictionary['data'][0].keys()))
+print('generated pairs:', len(return_dictionary['data']))
+
+```
+```bash
+main key: ['data']
+keys of pairs: ['output', 'input']
+generated pairs: 100
+```
+
+## Saving the dataset to a JSON file.
+
+```python
+from context_length import ContextLength
+context_length = ContextLength()
+
+def save_dictionary_to_json(return_dictionary={}, file_path=''):
+	from json import dump
+	from os.path import exists
+	with open(file_path, 'w', encoding='utf-8') as file: dump(return_dictionary, file, ensure_ascii=False, indent=4)
+	return exists(file_path)
+
+n_samples = 1000
+n_tokens = 10000
+file_path = f'./{n_samples}_samples.json'
+return_dictionary = context_length.generateDatabase(n_samples, n_tokens)
+saved_json = save_dictionary_to_json(return_dictionary=return_dictionary, file_path=file_path)
+if saved_json: print(f'File "{file_path}" saved SUCCESSFULLY!')
+else: print('ERROR saving the JSON file.')
+
+```
+```bash
+File "./1000_samples.json" saved SUCCESSFULLY!
 ```
 
 Copyright [2026] [Sapiens Technology®️]
