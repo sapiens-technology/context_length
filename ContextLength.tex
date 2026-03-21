@@ -1,0 +1,134 @@
+\documentclass[11pt,a4paper]{article}
+
+% -----------------------------------------------------------------------------
+% A SAPIENS TECHNOLOGY® PRODUCTION
+% -----------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsthm, amsfonts, mathtools}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+% Mathematical Operators and Spaces
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\U}{\mathcal{U}}
+
+\title{\Huge \textbf{Context Length -- Benchmarking}\\ \Large A Mathematical Formalization of Synthetic Noise Injection for Long-Context Attention Evaluation}
+\author{\Large \textbf{Sapiens Technology\textsuperscript{\tiny\textregistered}}}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The evaluation of Large Language Models (LLMs) over extended context windows requires mathematically rigorous frameworks to assess distributed information retention and anomaly detection. This paper formalizes the ``Context Length -- Benchmarking'' algorithm, a highly scalable synthetic data generator engineered by Sapiens Technology\textsuperscript{\tiny\textregistered}. We propose a strict topological mapping of lexical tokens to an arbitrarily defined dimensional space $N$, utilizing a modulo-periodic continuation operator to ensure precise context boundaries. We subsequently introduce a stochastic noise injection mechanism, conceptualized as a discrete structural anomaly drawn from a uniform distribution, embedded completely uniformly across the text vector space. The evaluation task is mathematically formulated as an adversarial multiple-choice classification problem, compelling the model's self-attention mechanism to isolate the non-manifold perturbation. This methodology provides a quantifiable, unbiased environment to evaluate attention degradation, effectively addressing constraints inherent to contemporary long-context computational benchmarks.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+The rapid scaling of sequence modeling architectures has necessitated the exponential expansion of context windows in Large Language Models (LLMs). However, the theoretical capability to ingest sequences of an arbitrary token length $N$ does not linearly correlate with the effective retention and accurate retrieval of dispersed information. The degradation of attention over vast token spaces, formally characterized as the ``Lost in the Middle'' phenomenon, necessitates rigorous evaluation methodologies. Benchmarks such as LongBench have formalized the academic assessment of these capabilities across multi-task generative and retrieval contexts. Concurrently, empirical stress tests, widely recognized in the literature as the ``needle in a haystack'' paradigm, have emerged to specifically evaluate singular anomaly retrieval amidst massive noise.
+
+This paper details the deep mathematical foundation of the \textit{Context Length -- Benchmarking} algorithm, developed by Sapiens Technology\textsuperscript{\tiny\textregistered}. The algorithm provides a fully deterministic yet stochastically configurable topological environment to measure self-attention robustness. By leveraging set theory, discrete probability distributions, and bijective mappings, we formalize the generation of synthetic datasets that perfectly isolate positional memory constraints in modern neural networks.
+
+\section{Topo-Lexical Mapping and Context Dimensionality}
+The foundational step of the algorithm requires mapping a natural language base manifold onto a strictly constrained $N$-dimensional token space to ensure absolute computational control over the tested context window.
+
+\subsection{Subword Tokenization as a Bijective Mapping}
+Let $\Sigma^*$ denote the free monoid over the universal character space, representing the input corpus (specifically, the internal \texttt{bible.txt} dataset). We define a subword tokenization function $\Phi: \Sigma^* \to \V^*$, rigorously isomorphic to the Byte-Pair Encoding (BPE) schema utilized in the \texttt{cl100k\_base} vocabulary space. The transformation yields a finite, discrete sequence of numerical tokens:
+\begin{equation}
+T = \Phi(\mathcal{S}_{\text{base}}), \quad |T| = M \in \N
+\end{equation}
+
+\subsection{Periodic Continuation for Strict Boundary Enforcement}
+To guarantee the model evaluates an exact context length $N$ (represented by the hyperparameter $n_{tokens}$), the sequence $T$ must be rigorously mapped to a target sequence $T^* \in \V^N$. We formalize this adjustment via a piecewise projection and periodic extension operator $\mathcal{P}_{M, N}$:
+\begin{equation}
+T^* = \mathcal{P}_{M, N}(T) = (t_0, t_1, \dots, t_{N-1})
+\end{equation}
+where each element is deterministically mapped as $t_i = T[i \bmod M]$. 
+
+If $M > N$, this operation acts as a strict subset truncation over the sequence manifold. If $M < N$, it constructs a periodic wave, sequentially extending the tokens until the dimensionality reaches exactly $N$. This ensures that the token density remains uniform without introducing out-of-distribution syntactic anomalies. The sequence is subsequently decoded back to the character space manifold: $\mathcal{S}_{\text{adj}} = \Phi^{-1}(T^*)$.
+
+\section{Stochastic Noise Injection (The Anomaly)}
+With the dimensional context uniformly bounded, the algorithm evaluates anomaly detection by introducing a mathematically orthogonal element into the underlying syntactic structure.
+
+\subsection{Lexical Partitioning and Equivalency Relation}
+The adjusted string $\mathcal{S}_{\text{adj}}$ is partitioned into an ordered sequence of discrete words $\mathcal{W} = (w_1, w_2, \dots, w_L)$. This partition is achieved by defining an equivalence relation mapped over the whitespace delimiter $\sigma_{32}$ (ASCII 32), effectively splitting the string into $L$ distinct textual elements.
+
+\subsection{Uniform Perturbation Operator}
+For an arbitrary evaluation sample $i \in \{1, \dots, n_{samples}\}$, we define an anomaly, or ``intruder,'' as a discrete random variable $\xi_i$. To ensure the anomaly does not belong to the intrinsic continuous distribution of the base text, it is sampled from a uniform discrete distribution of four-digit integers:
+\begin{equation}
+\xi_i \sim \U(\{x \in \Z \mid 1000 \le x \le 9999\})
+\end{equation}
+To objectively evaluate the distributed information retention of the attention mechanism, the insertion locus $\kappa_i$ is sampled uniformly across the entire length of the word sequence:
+\begin{equation}
+\kappa_i \sim \U(\{0, 1, \dots, L\})
+\end{equation}
+The base sequence $\mathcal{W}$ is thus subjected to a localized structural perturbation, yielding the augmented sequence:
+\begin{equation}
+\mathcal{W}^{(i)} = \left( w_1, \dots, w_{\kappa_i}, \xi_i, w_{\kappa_i+1}, \dots, w_L \right)
+\end{equation}
+The text string is sequentially reconstructed via concatenation: $\tilde{\mathcal{S}}^{(i)} = \bigoplus_{j=1}^{L+1} \mathcal{W}^{(i)}_j \sigma_{32}$.
+
+\section{Formulation of the Decision Boundary}
+The overarching evaluation metric is framed as an objective classification task over a highly restricted, adversarial action space. The LLM must project the high-dimensional input sequence $X^{(i)}$ onto a categorical distribution over four discrete topological choices.
+
+\subsection{Adversarial Distractor Generation}
+Let the true target be $y^* = \xi_i$. The algorithm constructs a set of mutually exclusive distractors by sampling without replacement from the complement space. We define the used values set as $\mathcal{U}_v = \{y^*\}$. For $k \in \{1, 2, 3\}$, we inductively define the distractors:
+\begin{equation}
+\delta_k \sim \U(\{1000, \dots, 9999\} \setminus \mathcal{U}_v), \quad \mathcal{U}_v \leftarrow \mathcal{U}_v \cup \{\delta_k\}
+\end{equation}
+This yields the perfectly balanced candidate set $\mathcal{C}^{(i)} = \{y^*, \delta_1, \delta_2, \delta_3\}$.
+
+\subsection{Permutation and Lexicographical Mapping}
+To completely eliminate structural and systemic biases in the multiple-choice prompt, we define a set of canonical prefixes $\mathcal{A} = \{\text{A)}, \text{B)}, \text{C)}, \text{D)}\}$. Let $\pi \sim \text{Sym}(\mathcal{A})$ be a uniformly sampled permutation from the symmetric group of degree 4. The algorithm computes a random bijective mapping between the candidates in $\mathcal{C}^{(i)}$ and the permuted prefixes. 
+
+Subsequently, the mapped elements are subjected to a rigorous lexicographical sorting operation. Let the unsorted options be $O_{\text{unsorted}} = \{ \pi_j \oplus \text{`` ''} \oplus c_j \mid c_j \in \mathcal{C}^{(i)} \}$. The sorting mechanism maps the options back to the canonical alphabetical sequence. Because the prefix values are intrinsically tied to the random permutation $\pi$, this mathematical operation uniquely guarantees that the true anomaly $y^*$ is assigned to a completely uniformly distributed classification boundary (A, B, C, or D).
+
+The final input tensor $X^{(i)}$ is constructed by concatenating the augmented text block $\tilde{\mathcal{S}}^{(i)}$ with a deterministic semantic querying prompt $\mathcal{Q}$, appended by the lexicographically sorted options $O_{\text{sorted}}$. The correctly mapped string is recorded as the absolute output $Y$.
+
+\section{Analytical Relevance to Attention Mechanisms}
+The mathematical formalization detailed above provides a critical theoretical toolset for measuring the computational limits of self-attention mechanisms in Large Language Models. In standard Transformer architectures, the multi-head self-attention matrix over a sequence matrix $X \in \R^{N \times d}$ is computed as:
+\begin{equation}
+A = \text{softmax}\left( \frac{X W_Q W_K^T X^T}{\sqrt{d_k}} \right)
+\end{equation}
+For extremely large sequence lengths $N \gg 10^4$, the softmax operation inherently dilutes the probability mass assigned to localized contextual perturbations. As established by recent long-context studies, models systematically fail to direct sufficient attention weight $A_{q, \kappa_i}$ when the anomaly locus $\kappa_i$ lies deep within the middle of the input matrix, far from the boundaries. 
+
+By utilizing a pristine uniform prior $\kappa_i \sim \U([0, L])$ and ensuring exact length control via the periodic continuation $T^* = \mathcal{P}_{M,N}(T)$, the \textit{Context Length -- Benchmarking} algorithm yields a statistically sound, non-biased gradient of attention capability across the entire tensor domain. It isolates pure anomaly detection capability from semantic reasoning complexity, effectively fulfilling the requirements for an optimal synthetic diagnostic.
+
+\section{Conclusion}
+The proposed \textit{Context Length -- Benchmarking} algorithm offers a highly sophisticated, deterministic paradigm for empirically evaluating language models under arbitrary long-context constraints. By unifying rigorous subword topology constraints, modulo-periodic sequence continuation, and uniform stochastic noise injection, Sapiens Technology\textsuperscript{\tiny\textregistered} has constructed an environment that fundamentally measures self-attention retention limits. The strictly constrained multiple-choice manifold further guarantees that the output evaluation space is mathematically sound, automated, and scalable for future foundational model benchmarking operations.
+
+\begin{thebibliography}{9}
+
+\bibitem{liu2024lost}
+Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., \& Liang, P. (2024).
+\textit{Lost in the Middle: How Language Models Use Long Contexts}.
+Transactions of the Association for Computational Linguistics (TACL), 12, 157--173.
+
+\bibitem{bai2024longbench}
+Bai, Y., Lv, X., Zhang, J., Lyu, H., Tang, J., Huang, Z., Du, Z., Liu, X., Zeng, A., Hou, L., Dong, Y., Tang, J., \& Li, J. (2024).
+\textit{LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding}.
+Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 1, 1--20.
+
+\bibitem{kamradt2023needle}
+Kamradt, G. (2023).
+\textit{Needle In A Haystack - Pressure Testing LLMs}.
+GitHub Repository.
+
+\end{thebibliography}
+
+\end{document}
