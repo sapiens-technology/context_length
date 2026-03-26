@@ -25,7 +25,7 @@ In practice, this benchmark is similar to the "needle in a haystack" problem, wh
 
 In short, the algorithm provides a controlled, scalable environment to test real limitations of language models, especially in tasks requiring memory, attention, and robustness to noise.
 
-Click [here](https://zenodo.org/records/19143014) to access the full study.
+Click [here](https://doi.org/10.5281/zenodo.19143014) to access the full study.
 
 ## Installation
 
